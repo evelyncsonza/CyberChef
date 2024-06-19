@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400..900&display=swap');
+
+:root{
+    --rosa-fraco:#FFB4D9;
+    --rosa-medio: #e07bb1;
+    --rosa-forte: #DD5CA0;
+    --cinza: #ccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+/* Scroll da página */
+*::-webkit-scrollbar {
+    width: 8px;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--rosa-forte);
+    border-radius: 10px;
+    border: 1px solid solid transparent;
+    background-clip: padding-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*Header*/
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background: var(--rosa-forte);
+}
+
+.navHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px 0 25px;
+    width: 100%;
+    height: 100%;
+    gap: 25px;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--rosa-medio);
+    padding: 5px 10px;
+    border-radius: 30px;
+    height: 30px;
+}
+
+.search-input {
+    border: none;
+    background-color: transparent;
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 16px;
+    width: 100%;
+    color: #fff;
+}
+
+.search-input::placeholder{
+    color: #fff;
+    opacity: 0.70;
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#link-logo{
+    text-decoration:none;
+    height: 3.7em;
+}
+
+#logo{
+    height: 3.7em;
+}
+
+.linksHeader{
+    text-decoration:none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.07em;
+    color: #fff;
+}
+
+#lista ul{
+    padding: 0;
+    margin: 0;
+}
+
+#lista li{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    list-style-type: none;
+    height: 30px;
+    border-radius: 30px;
+    background-color: var(--rosa-medio);
+}
+
+#lista a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0 15px 0 15px;
+}
+
+#lista li:nth-child{
+    padding-right: 0;
+}
+
+.user{
+    color: #fff;
+}
+
+html {
+    background: #f4f4f4;
+}
+
+main {
+    color: #333;
+}
+
+main a{
+    color: #333;
+}
+
+main ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+main li {
+    background-color: white;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+main img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.descricao {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limita a 3 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsividade */
+@media (min-width: 600px) {
+    main ul {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 20px;
+        padding: 20px;
+    }
+
+    main li {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    main form {
+        margin-top: 10px;
+    }
+}
+
+/* Botões */
+main button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    /* margin-right: 5px; */
+    background-color: #28a745; /* verde */
+    color: white;
+}
+
+main button:hover {
+    opacity: 0.9;
+}
+
+/* Botão excluir com cor diferente */
+[name="excluir_receita"] {
+    background-color: #dc3545; /* vermelho */
+}
+
+.btn-denunciar {
+    background-color: #0093f5; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-denunciar:hover {
+    background-color: #c9302c; /* Vermelho mais escuro */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 150px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Adjust width to your preference */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    text-align: center; /* Centralizes the content */
+  }
+  
+  .modal-header {
+    padding: 2px 16px;
+    background-color: #ffccd5; /* Changed to light pink */
+    color: white;
+    text-align: center;
+  }
+  
+  .modal-body {
+    padding: 2px 16px;
+    text-align: center; /* Ensure the body content is centered */
+  }
+  
+  .modal-footer {
+    padding: 2px 16px;
+    color: white;
+    text-align: center; /* Centralizes the footer content */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+.filtros {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    justify-content: center;
+    gap: 5px;
+}
+
+.filtros label {
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+#dificuldade {
+    background-color: var(--rosa-forte);
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-radius: 8px;
+    padding: 9px 20px;
+    outline: none;
+}
+
+#dificuldade option{
+    background-color: var(--rosa-fraco);
+}
+
+.btn-limpar {
+    background-color: var(--rosa-forte);
+    color: white;
+    font-size: 10px;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    font-size: 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+}
+
+.dropdown-content label {
+    display: block;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.dropdown-content input[type="checkbox"] {
+    margin-right: 8px;
+    height: 10px;
+}
+
+.dropdown .dropbtn {
+    background-color: var(--rosa-forte);
+    color: white;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    position: relative;
+    padding-right: 40px;
+}
+
+.dropdown .dropbtn:focus {
+    outline: none;
+}
+
+.dropdown .dropbtn::after {
+    content: '\25BC';
+    font-size: 7px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.3s;
+}
+
+.dropdown .dropbtn.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
